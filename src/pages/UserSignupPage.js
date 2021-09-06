@@ -57,31 +57,37 @@ class UserSignupPage extends React.Component {
     }
 
     render() {
+        const {pendingApiCall}=this.state;
+        const {username,displayName,password}=this.state.errors;
         return (
             <div className="container">
                 <form>
 
                     <div className="text-center">
                         <h1>SignUp</h1>
-                    </div>
+                    </div>`
                     <br/>
 
                     <div className="form-group">
                         <label>Username</label>
-                        <input className={this.state.errors.username ? 'form-control is-invalid' : 'form-control'} type="text" name="username" onChange={this.onChange}/>
-                        <div className="invalid-feedback">{this.state.errors.username}</div>
+                        <input className={username ? 'form-control is-invalid' : 'form-control'} type="text" name="username" onChange={this.onChange}/>
+                        <div className="invalid-feedback">{username}</div>
                     </div>
                     <br/>
 
                     <div className="form-group">
                         <label>DisplayName</label>
-                        <input className="form-control" type="text" name="displayName" onChange={this.onChange}/>
+                        <input className={displayName ? 'form-control is-invalid' : 'form-control'} type="text" name="displayName" onChange={this.onChange}/>
+                        <div className="invalid-feedback">{displayName}</div>
+
                     </div>
                     <br/>
 
                     <div className="form-group">
                         <label>Password</label>
-                        <input className="form-control" type="password" name="password" onChange={this.onChange}/>
+                        <input className={password ? 'form-control is-invalid' : 'form-control'}  type="password" name="password" onChange={this.onChange}/>
+                        <div className="invalid-feedback">{password}</div>
+
                     </div>
                     <br/>
 
@@ -93,8 +99,8 @@ class UserSignupPage extends React.Component {
 
                     <div className="text-center">
                         <button className="btn btn-success text-center" onClick={this.onClickSignUp}
-                                disabled={this.state.pendingApiCall}>
-                            {this.state.pendingApiCall && <span className="spinner-border spinner-border-sm"></span>}
+                                disabled={pendingApiCall}>
+                            {pendingApiCall && <span className="spinner-border spinner-border-sm"></span>}
 
                             Sign Up
                         </button>
