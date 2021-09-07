@@ -18,6 +18,16 @@ class UserSignupPage extends React.Component {
         const errors = {...this.state.errors};
         errors[name] = undefined;
 
+        if (name === 'password' || name === 'passwordRepeat') {
+            if (name === 'password' && value !== this.state.passwordRepeat) {
+                errors.passwordRepeat = "Password mismatch";
+            } else if (name === 'passwordRepeat' && value !== this.state.password) {
+                errors.passwordRepeat = 'Password mismatch'
+            } else {
+                errors.passwordRepeat = undefined
+            }
+        }
+
         this.setState({
             [name]: value,
             errors
@@ -47,7 +57,7 @@ class UserSignupPage extends React.Component {
 
     render() {
         const {pendingApiCall} = this.state;
-        const {username, displayName, password} = this.state.errors;
+        const {username, displayName, password, passwordRepeat} = this.state.errors;
         return (
             <div className="container">
                 <form>
@@ -58,19 +68,16 @@ class UserSignupPage extends React.Component {
                     <br/>
 
                     <Input name="username" label="Username" error={username} onChange={this.onChange} type="text"/>
-                    <Input name="displayName" label="DisplayName" error={displayName} onChange={this.onChange} type="text"/>
+                    <Input name="displayName" label="DisplayName" error={displayName} onChange={this.onChange}
+                           type="text"/>
                     <Input name="password" label="Password" error={password} onChange={this.onChange} type="password"/>
+                    <Input name="passwordRepeat" label="Password Repeat" error={passwordRepeat} onChange={this.onChange}
+                           type="password"/>
 
-
-                    <div className="form-group">
-                        <label>PasswordRepeat</label>
-                        <input className="form-control" type="password" name="passwordRepeat" onChange={this.onChange}/>
-                    </div>
-                    <br/>
 
                     <div className="text-center">
                         <button className="btn btn-success text-center" onClick={this.onClickSignUp}
-                                disabled={pendingApiCall}>
+                                disabled={pendingApiCall || passwordRepeat!==undefined}>
                             {pendingApiCall && <span className="spinner-border spinner-border-sm"></span>}
                             Sign Up
                         </button>
