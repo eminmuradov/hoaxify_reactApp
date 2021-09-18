@@ -4,8 +4,10 @@
     <list default="true" id="9e19c7f8-6f97-4b47-90ef-297ebf1232f1" name="Changes" comment="task">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/apiCall.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/apiCall.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/UserSignupPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UserSignupPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +71,7 @@
       <updated>1630656305480</updated>
       <workItem from="1630656307185" duration="20045000" />
       <workItem from="1630915705678" duration="32236000" />
+      <workItem from="1631692544972" duration="8930000" />
     </task>
     <task id="LOCAL-00001" summary="task">
       <created>1631023907046</created>

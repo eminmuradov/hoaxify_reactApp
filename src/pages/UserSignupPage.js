@@ -1,5 +1,5 @@
 import React from "react";
-import {signup, changeLanguage} from '../api/apiCall'
+import {signup} from '../api/apiCall'
 import Input from '../components/Input'
 import {withTranslation} from 'react-i18next'
 
@@ -51,6 +51,7 @@ class UserSignupPage extends React.Component {
         this.setState({pendingApiCall: true})
         try {
             const response = await signup(body)
+            console.log(response)
         } catch (error) {
             this.setState({errors: error.response.data.validationErrors})
         }

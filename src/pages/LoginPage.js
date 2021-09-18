@@ -23,7 +23,7 @@ class LoginPage extends Component {
         const creds = {
             username: username,
             password: password
-         }
+        }
         login(creds);
     }
 
@@ -32,12 +32,14 @@ class LoginPage extends Component {
         const {t} = this.props
         return (
             <div className="container">
-                <h1 style={{textAlign: "center"}}>{t('Login')}</h1>
-                <Input name="username" label={t('Username')} onChange={this.onChange} type="text"/>
-                <Input name="password" label={t('Password')} onChange={this.onChange} type="password"/>
-                <div className="text-center">
-                    <button className="btn btn-success" onClick={this.onClickLogin}>{t('Login')}</button>
-                </div>
+                <form>
+                    <h1 style={{textAlign: "center"}}>{t('Login')}</h1>
+                    <Input name="username" label={t('Username')} onChange={this.onChange} type="text"/>
+                    <Input name="password" label={t('Password')} onChange={this.onChange} type="password"/>
+                    <div className="text-center">
+                        <button className="btn btn-success" onClick={this.onClickLogin}>{t('Login')}</button>
+                    </div>
+                </form>
 
             </div>
 
